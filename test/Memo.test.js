@@ -14,17 +14,31 @@ contract('Memo',function(accounts){
 			assert.notEqual(address,undefined);
 		})
 	})
-	it('Check Lists',function(){
+	it('Lists Tasks',function(){
 		return Memo.deployed().then(function(instance){
 			memo=instance;
+				return memo.taskCount().then(function(taskcount){
+					count = taskcount;
+					return memo.tasks(taskcount);
+			}).then(function(task){
+				assert.equal(task.id.toNumber(),count);
+			    assert.equal(task.content, 'Welcome to Decentralized Memo App')
+			    assert.equal(task.completed, false)
+			    assert.equal(count.toNumber(), 1)
+			})
+		})
+	})
+	it('Create Tasks',function(){
+		return Memo.deployed().then(function(instance){
+			memo=instance;
+			return memo.createTask('A new Task');
+		}).then(function(result){
+			assert.equal(result.logs[0].args.id.toNumber(),2);
+			assert.equal(result.logs[0].args.content,'A new Task');
+			assert.equal(result.logs[0].args.completed,false);
 			return memo.taskCount();
 		}).then(function(count){
-			return memo.tasks(count);
-		}).then(function(task){
-			//assert.equal(task.id.toNumber(), count.toNumber())
-		    assert.equal(task.content, 'Welcome to Decentralized Memo App')
-		    assert.equal(task.completed, false)
-		    //assert.equal(taskCount.toNumber(), 1)
+			assert.equal(count,2);
 		})
 	})
 	it('Toggles task completion',function(){
