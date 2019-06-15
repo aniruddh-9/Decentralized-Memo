@@ -49,6 +49,28 @@
       "type": "constructor"
     },
     {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "content",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "name": "completed",
+          "type": "bool"
+        }
+      ],
+      "name": "TaskCreated",
+      "type": "event"
+    },
+    {
       "constant": false,
       "inputs": [
         {
@@ -63,21 +85,21 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"_content\",\"type\":\"string\"}],\"name\":\"createTask\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"tasks\",\"outputs\":[{\"name\":\"id\",\"type\":\"uint256\"},{\"name\":\"content\",\"type\":\"string\"},{\"name\":\"completed\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"taskCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/leo/Desktop/Decentralized-Memo/contracts/Memo.sol\":\"Memo\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/leo/Desktop/Decentralized-Memo/contracts/Memo.sol\":{\"keccak256\":\"0x9aff8625c27592cd8280cb74305756bbcaa7c23df8795cbbd2b658e3ae29d933\",\"urls\":[\"bzzr://e3e2d17980ba29ed7e64563a36c1244ab2d8518ff12d2bc4216bd603e7d20c1e\"]}},\"version\":1}",
-  "bytecode": "0x60806040526000805534801561001457600080fd5b5061003c6040518060600160405280602181526020016104ee6021913961004160201b60201c565b610148565b600080546001908101808355604080516060810182528281526020808201878152828401879052938652848152919094208451815591518051929361008e939085019291909101906100ad565b50604091909101516002909101805460ff191691151591909117905550565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106100ee57805160ff191683800117855561011b565b8280016001018555821561011b579182015b8281111561011b578251825591602001919060010190610100565b5061012792915061012b565b5090565b61014591905b808211156101275760008155600101610131565b90565b610397806101576000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c8063111002aa146100465780638d977672146100ee578063b6cb58a514610195575b600080fd5b6100ec6004803603602081101561005c57600080fd5b81019060208101813564010000000081111561007757600080fd5b82018360208201111561008957600080fd5b803590602001918460018302840111640100000000831117156100ab57600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295506101af945050505050565b005b61010b6004803603602081101561010457600080fd5b503561021b565b604051808481526020018060200183151515158152602001828103825284818151815260200191508051906020019080838360005b83811015610158578181015183820152602001610140565b50505050905090810190601f1680156101855780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b61019d6102ca565b60408051918252519081900360200190f35b60008054600190810180835560408051606081018252828152602080820187815282840187905293865284815291909420845181559151805192936101fc939085019291909101906102d0565b50604091909101516002909101805460ff191691151591909117905550565b600160208181526000928352604092839020805481840180548651600296821615610100026000190190911695909504601f810185900485028601850190965285855290949193929091908301828280156102b75780601f1061028c576101008083540402835291602001916102b7565b820191906000526020600020905b81548152906001019060200180831161029a57829003601f168201915b5050506002909301549192505060ff1683565b60005481565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061031157805160ff191683800117855561033e565b8280016001018555821561033e579182015b8281111561033e578251825591602001919060010190610323565b5061034a92915061034e565b5090565b61036891905b8082111561034a5760008155600101610354565b9056fea165627a7a723058206fb640b955cc3cadaad995a3ab039cec96b5ddef7be1f80af651149ace61cbb6002957656c636f6d6520746f20446563656e7472616c697a6564204d656d6f20417070",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c8063111002aa146100465780638d977672146100ee578063b6cb58a514610195575b600080fd5b6100ec6004803603602081101561005c57600080fd5b81019060208101813564010000000081111561007757600080fd5b82018360208201111561008957600080fd5b803590602001918460018302840111640100000000831117156100ab57600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295506101af945050505050565b005b61010b6004803603602081101561010457600080fd5b503561021b565b604051808481526020018060200183151515158152602001828103825284818151815260200191508051906020019080838360005b83811015610158578181015183820152602001610140565b50505050905090810190601f1680156101855780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b61019d6102ca565b60408051918252519081900360200190f35b60008054600190810180835560408051606081018252828152602080820187815282840187905293865284815291909420845181559151805192936101fc939085019291909101906102d0565b50604091909101516002909101805460ff191691151591909117905550565b600160208181526000928352604092839020805481840180548651600296821615610100026000190190911695909504601f810185900485028601850190965285855290949193929091908301828280156102b75780601f1061028c576101008083540402835291602001916102b7565b820191906000526020600020905b81548152906001019060200180831161029a57829003601f168201915b5050506002909301549192505060ff1683565b60005481565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061031157805160ff191683800117855561033e565b8280016001018555821561033e579182015b8281111561033e578251825591602001919060010190610323565b5061034a92915061034e565b5090565b61036891905b8082111561034a5760008155600101610354565b9056fea165627a7a723058206fb640b955cc3cadaad995a3ab039cec96b5ddef7be1f80af651149ace61cbb60029",
-  "sourceMap": "24:430:0:-;;;62:1;40:23;;150:75;8:9:-1;5:2;;;30:1;27;20:12;5:2;150:75:0;174:47;;;;;;;;;;;;;;;;;;:10;;;:47;;:::i;:::-;24:430;;330:122;384:9;:11;;;;;;;;;416:30;;;;;;;;;;;;;;;;;;;;;;;;399:16;;;;;;;;;;:47;;;;;;;;:16;;:47;;;;;;;;;;;;:::i;:::-;-1:-1:-1;399:47:0;;;;;;;;;;;;-1:-1:-1;;399:47:0;;;;;;;;;;-1:-1:-1;330:122:0:o;24:430::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;24:430:0;;;-1:-1:-1;24:430:0;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
-  "deployedSourceMap": "24:430:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;24:430:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;330:122;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;330:122:0;;;;;;;;21:11:-1;5:28;;2:2;;;46:1;43;36:12;2:2;330:122:0;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;330:122:0;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;330:122:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;330:122:0;;-1:-1:-1;330:122:0;;-1:-1:-1;;;;;330:122:0:i;:::-;;292:35;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;292:35:0;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;292:35:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;40:23;;;:::i;:::-;;;;;;;;;;;;;;;;330:122;384:9;:11;;;;;;;;;416:30;;;;;;;;;;;;;;;;;;;;;;;;399:16;;;;;;;;;;:47;;;;;;;;:16;;:47;;;;;;;;;;;;:::i;:::-;-1:-1:-1;399:47:0;;;;;;;;;;;;-1:-1:-1;;399:47:0;;;;;;;;;;-1:-1:-1;330:122:0:o;292:35::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;292:35:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;292:35:0;;;;;;;-1:-1:-1;;292:35:0;;;:::o;40:23::-;;;;:::o;24:430::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;24:430:0;;;-1:-1:-1;24:430:0;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity ^0.5.3;\ncontract Memo{\n\tuint public taskCount=0;\t// State Variable\n\t\t\t\t// Written on blockchain and we get getter functions for free\n\tconstructor() public{\n\t\tcreateTask(\"Welcome to Decentralized Memo App\");\n\t}\n\tstruct Task{\n\t\tuint id;\n\t\tstring content;\n\t\tbool completed;\n\t}\n\n\tmapping (uint => Task) public tasks;\n\tfunction createTask(string memory _content) public{\n\t\ttaskCount++;\n\t\ttasks[taskCount]=Task(taskCount,_content,false);\t\t\n\t}\n}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"_content\",\"type\":\"string\"}],\"name\":\"createTask\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"tasks\",\"outputs\":[{\"name\":\"id\",\"type\":\"uint256\"},{\"name\":\"content\",\"type\":\"string\"},{\"name\":\"completed\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"taskCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"content\",\"type\":\"string\"},{\"indexed\":false,\"name\":\"completed\",\"type\":\"bool\"}],\"name\":\"TaskCreated\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/leo/Desktop/Decentralized-Memo/contracts/Memo.sol\":\"Memo\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/leo/Desktop/Decentralized-Memo/contracts/Memo.sol\":{\"keccak256\":\"0xcd8e754494ecc802cea9356a5b2433a2965a83827e0247acf731299dda9b182d\",\"urls\":[\"bzzr://1913b00c2ade9f98e95aeb3b38d9a1935802251d54f369f0d1cf82cc6233a9a1\"]}},\"version\":1}",
+  "bytecode": "0x60806040526000805534801561001457600080fd5b5061003c6040518060600160405280602181526020016104ee6021913961004160201b60201c565b610148565b600080546001908101808355604080516060810182528281526020808201878152828401879052938652848152919094208451815591518051929361008e939085019291909101906100ad565b50604091909101516002909101805460ff191691151591909117905550565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106100ee57805160ff191683800117855561011b565b8280016001018555821561011b579182015b8281111561011b578251825591602001919060010190610100565b5061012792915061012b565b5090565b61014591905b808211156101275760008155600101610131565b90565b610397806101576000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c8063111002aa146100465780638d977672146100ee578063b6cb58a514610195575b600080fd5b6100ec6004803603602081101561005c57600080fd5b81019060208101813564010000000081111561007757600080fd5b82018360208201111561008957600080fd5b803590602001918460018302840111640100000000831117156100ab57600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295506101af945050505050565b005b61010b6004803603602081101561010457600080fd5b503561021b565b604051808481526020018060200183151515158152602001828103825284818151815260200191508051906020019080838360005b83811015610158578181015183820152602001610140565b50505050905090810190601f1680156101855780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b61019d6102ca565b60408051918252519081900360200190f35b60008054600190810180835560408051606081018252828152602080820187815282840187905293865284815291909420845181559151805192936101fc939085019291909101906102d0565b50604091909101516002909101805460ff191691151591909117905550565b600160208181526000928352604092839020805481840180548651600296821615610100026000190190911695909504601f810185900485028601850190965285855290949193929091908301828280156102b75780601f1061028c576101008083540402835291602001916102b7565b820191906000526020600020905b81548152906001019060200180831161029a57829003601f168201915b5050506002909301549192505060ff1683565b60005481565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061031157805160ff191683800117855561033e565b8280016001018555821561033e579182015b8281111561033e578251825591602001919060010190610323565b5061034a92915061034e565b5090565b61036891905b8082111561034a5760008155600101610354565b9056fea165627a7a723058203ba732f08c80f437eedd3cc30688ea8e0206252b8b9a9127ec1f1324cee8be3b002957656c636f6d6520746f20446563656e7472616c697a6564204d656d6f20417070",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c8063111002aa146100465780638d977672146100ee578063b6cb58a514610195575b600080fd5b6100ec6004803603602081101561005c57600080fd5b81019060208101813564010000000081111561007757600080fd5b82018360208201111561008957600080fd5b803590602001918460018302840111640100000000831117156100ab57600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295506101af945050505050565b005b61010b6004803603602081101561010457600080fd5b503561021b565b604051808481526020018060200183151515158152602001828103825284818151815260200191508051906020019080838360005b83811015610158578181015183820152602001610140565b50505050905090810190601f1680156101855780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b61019d6102ca565b60408051918252519081900360200190f35b60008054600190810180835560408051606081018252828152602080820187815282840187905293865284815291909420845181559151805192936101fc939085019291909101906102d0565b50604091909101516002909101805460ff191691151591909117905550565b600160208181526000928352604092839020805481840180548651600296821615610100026000190190911695909504601f810185900485028601850190965285855290949193929091908301828280156102b75780601f1061028c576101008083540402835291602001916102b7565b820191906000526020600020905b81548152906001019060200180831161029a57829003601f168201915b5050506002909301549192505060ff1683565b60005481565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061031157805160ff191683800117855561033e565b8280016001018555821561033e579182015b8281111561033e578251825591602001919060010190610323565b5061034a92915061034e565b5090565b61036891905b8082111561034a5760008155600101610354565b9056fea165627a7a723058203ba732f08c80f437eedd3cc30688ea8e0206252b8b9a9127ec1f1324cee8be3b0029",
+  "sourceMap": "24:503:0:-;;;62:1;40:23;;150:75;8:9:-1;5:2;;;30:1;27;20:12;5:2;150:75:0;174:47;;;;;;;;;;;;;;;;;;:10;;;:47;;:::i;:::-;24:503;;403:122;457:9;:11;;;;;;;;;489:30;;;;;;;;;;;;;;;;;;;;;;;;472:16;;;;;;;;;;:47;;;;;;;;:16;;:47;;;;;;;;;;;;:::i;:::-;-1:-1:-1;472:47:0;;;;;;;;;;;;-1:-1:-1;;472:47:0;;;;;;;;;;-1:-1:-1;403:122:0:o;24:503::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;24:503:0;;;-1:-1:-1;24:503:0;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "24:503:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;24:503:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;403:122;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;403:122:0;;;;;;;;21:11:-1;5:28;;2:2;;;46:1;43;36:12;2:2;403:122:0;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;403:122:0;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;403:122:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;403:122:0;;-1:-1:-1;403:122:0;;-1:-1:-1;;;;;403:122:0:i;:::-;;364:35;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;364:35:0;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;364:35:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;40:23;;;:::i;:::-;;;;;;;;;;;;;;;;403:122;457:9;:11;;;;;;;;;489:30;;;;;;;;;;;;;;;;;;;;;;;;472:16;;;;;;;;;;:47;;;;;;;;:16;;:47;;;;;;;;;;;;:::i;:::-;-1:-1:-1;472:47:0;;;;;;;;;;;;-1:-1:-1;;472:47:0;;;;;;;;;;-1:-1:-1;403:122:0:o;364:35::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;364:35:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;364:35:0;;;;;;;-1:-1:-1;;364:35:0;;;:::o;40:23::-;;;;:::o;24:503::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;24:503:0;;;-1:-1:-1;24:503:0;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.3;\ncontract Memo{\n\tuint public taskCount=0;\t// State Variable\n\t\t\t\t// Written on blockchain and we get getter functions for free\n\tconstructor() public{\n\t\tcreateTask(\"Welcome to Decentralized Memo App\");\n\t}\n\tstruct Task{\n\t\tuint id;\n\t\tstring content;\n\t\tbool completed;\n\t}\n\n\tevent TaskCreated(\n\t\tuint id,\n\t\tstring content,\n\t\tbool completed\n\n\t);\n\n\tmapping (uint => Task) public tasks;\n\n\tfunction createTask(string memory _content) public{\n\t\ttaskCount++;\n\t\ttasks[taskCount]=Task(taskCount,_content,false);\t\t\n\t}\n}",
   "sourcePath": "/home/leo/Desktop/Decentralized-Memo/contracts/Memo.sol",
   "ast": {
     "absolutePath": "/home/leo/Desktop/Decentralized-Memo/contracts/Memo.sol",
     "exportedSymbols": {
       "Memo": [
-        43
+        51
       ]
     },
-    "id": 44,
+    "id": 52,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -97,9 +119,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 43,
+        "id": 51,
         "linearizedBaseContracts": [
-          43
+          51
         ],
         "name": "Memo",
         "nodeType": "ContractDefinition",
@@ -109,7 +131,7 @@
             "id": 4,
             "name": "taskCount",
             "nodeType": "VariableDeclaration",
-            "scope": 43,
+            "scope": 51,
             "src": "40:23:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -187,7 +209,7 @@
                       "name": "createTask",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 42,
+                      "referencedDeclaration": 50,
                       "src": "174:10:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
@@ -233,7 +255,7 @@
               "parameters": [],
               "src": "170:0:0"
             },
-            "scope": 43,
+            "scope": 51,
             "src": "150:75:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -324,17 +346,113 @@
             ],
             "name": "Task",
             "nodeType": "StructDefinition",
-            "scope": 43,
+            "scope": 51,
             "src": "227:62:0",
             "visibility": "public"
           },
           {
+            "anonymous": false,
+            "documentation": null,
+            "id": 27,
+            "name": "TaskCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 26,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 21,
+                  "indexed": false,
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 27,
+                  "src": "313:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 20,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "313:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 23,
+                  "indexed": false,
+                  "name": "content",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 27,
+                  "src": "324:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 22,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "324:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 25,
+                  "indexed": false,
+                  "name": "completed",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 27,
+                  "src": "342:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 24,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "342:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "309:51:0"
+            },
+            "src": "292:69:0"
+          },
+          {
             "constant": false,
-            "id": 23,
+            "id": 31,
             "name": "tasks",
             "nodeType": "VariableDeclaration",
-            "scope": 43,
-            "src": "292:35:0",
+            "scope": 51,
+            "src": "364:35:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -342,30 +460,30 @@
               "typeString": "mapping(uint256 => struct Memo.Task)"
             },
             "typeName": {
-              "id": 22,
+              "id": 30,
               "keyType": {
-                "id": 20,
+                "id": 28,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
-                "src": "301:4:0",
+                "src": "373:4:0",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 }
               },
               "nodeType": "Mapping",
-              "src": "292:22:0",
+              "src": "364:22:0",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Task_$19_storage_$",
                 "typeString": "mapping(uint256 => struct Memo.Task)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 21,
+                "id": 29,
                 "name": "Task",
                 "nodeType": "UserDefinedTypeName",
                 "referencedDeclaration": 19,
-                "src": "309:4:0",
+                "src": "381:4:0",
                 "typeDescriptions": {
                   "typeIdentifier": "t_struct$_Task_$19_storage_ptr",
                   "typeString": "struct Memo.Task"
@@ -377,14 +495,14 @@
           },
           {
             "body": {
-              "id": 41,
+              "id": 49,
               "nodeType": "Block",
-              "src": "380:72:0",
+              "src": "453:72:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 29,
+                    "id": 37,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -392,15 +510,15 @@
                     "nodeType": "UnaryOperation",
                     "operator": "++",
                     "prefix": false,
-                    "src": "384:11:0",
+                    "src": "457:11:0",
                     "subExpression": {
                       "argumentTypes": null,
-                      "id": 28,
+                      "id": 36,
                       "name": "taskCount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 4,
-                      "src": "384:9:0",
+                      "src": "457:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -411,14 +529,14 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 30,
+                  "id": 38,
                   "nodeType": "ExpressionStatement",
-                  "src": "384:11:0"
+                  "src": "457:11:0"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 39,
+                    "id": 47,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -427,26 +545,26 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 31,
+                        "id": 39,
                         "name": "tasks",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23,
-                        "src": "399:5:0",
+                        "referencedDeclaration": 31,
+                        "src": "472:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Task_$19_storage_$",
                           "typeString": "mapping(uint256 => struct Memo.Task storage ref)"
                         }
                       },
-                      "id": 33,
+                      "id": 41,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 32,
+                        "id": 40,
                         "name": "taskCount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 4,
-                        "src": "405:9:0",
+                        "src": "478:9:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -457,7 +575,7 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "399:16:0",
+                      "src": "472:16:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_Task_$19_storage",
                         "typeString": "struct Memo.Task storage ref"
@@ -470,12 +588,12 @@
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 35,
+                          "id": 43,
                           "name": "taskCount",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 4,
-                          "src": "421:9:0",
+                          "src": "494:9:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -483,12 +601,12 @@
                         },
                         {
                           "argumentTypes": null,
-                          "id": 36,
+                          "id": 44,
                           "name": "_content",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 25,
-                          "src": "431:8:0",
+                          "referencedDeclaration": 33,
+                          "src": "504:8:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_memory_ptr",
                             "typeString": "string memory"
@@ -497,14 +615,14 @@
                         {
                           "argumentTypes": null,
                           "hexValue": "66616c7365",
-                          "id": 37,
+                          "id": 45,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "bool",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "440:5:0",
+                          "src": "513:5:0",
                           "subdenomination": null,
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
@@ -528,18 +646,18 @@
                             "typeString": "bool"
                           }
                         ],
-                        "id": 34,
+                        "id": 42,
                         "name": "Task",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 19,
-                        "src": "416:4:0",
+                        "src": "489:4:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_struct$_Task_$19_storage_ptr_$",
                           "typeString": "type(struct Memo.Task storage pointer)"
                         }
                       },
-                      "id": 38,
+                      "id": 46,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -547,42 +665,42 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "416:30:0",
+                      "src": "489:30:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_Task_$19_memory",
                         "typeString": "struct Memo.Task memory"
                       }
                     },
-                    "src": "399:47:0",
+                    "src": "472:47:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_struct$_Task_$19_storage",
                       "typeString": "struct Memo.Task storage ref"
                     }
                   },
-                  "id": 40,
+                  "id": 48,
                   "nodeType": "ExpressionStatement",
-                  "src": "399:47:0"
+                  "src": "472:47:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 42,
+            "id": 50,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "createTask",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 26,
+              "id": 34,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25,
+                  "id": 33,
                   "name": "_content",
                   "nodeType": "VariableDeclaration",
-                  "scope": 42,
-                  "src": "350:22:0",
+                  "scope": 50,
+                  "src": "423:22:0",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -590,10 +708,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24,
+                    "id": 32,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "350:6:0",
+                    "src": "423:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -603,35 +721,35 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "349:24:0"
+              "src": "422:24:0"
             },
             "returnParameters": {
-              "id": 27,
+              "id": 35,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "380:0:0"
+              "src": "453:0:0"
             },
-            "scope": 43,
-            "src": "330:122:0",
+            "scope": 51,
+            "src": "403:122:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 44,
-        "src": "24:430:0"
+        "scope": 52,
+        "src": "24:503:0"
       }
     ],
-    "src": "0:454:0"
+    "src": "0:527:0"
   },
   "legacyAST": {
     "absolutePath": "/home/leo/Desktop/Decentralized-Memo/contracts/Memo.sol",
     "exportedSymbols": {
       "Memo": [
-        43
+        51
       ]
     },
-    "id": 44,
+    "id": 52,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -651,9 +769,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 43,
+        "id": 51,
         "linearizedBaseContracts": [
-          43
+          51
         ],
         "name": "Memo",
         "nodeType": "ContractDefinition",
@@ -663,7 +781,7 @@
             "id": 4,
             "name": "taskCount",
             "nodeType": "VariableDeclaration",
-            "scope": 43,
+            "scope": 51,
             "src": "40:23:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -741,7 +859,7 @@
                       "name": "createTask",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 42,
+                      "referencedDeclaration": 50,
                       "src": "174:10:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
@@ -787,7 +905,7 @@
               "parameters": [],
               "src": "170:0:0"
             },
-            "scope": 43,
+            "scope": 51,
             "src": "150:75:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -878,17 +996,113 @@
             ],
             "name": "Task",
             "nodeType": "StructDefinition",
-            "scope": 43,
+            "scope": 51,
             "src": "227:62:0",
             "visibility": "public"
           },
           {
+            "anonymous": false,
+            "documentation": null,
+            "id": 27,
+            "name": "TaskCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 26,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 21,
+                  "indexed": false,
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 27,
+                  "src": "313:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 20,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "313:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 23,
+                  "indexed": false,
+                  "name": "content",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 27,
+                  "src": "324:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 22,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "324:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 25,
+                  "indexed": false,
+                  "name": "completed",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 27,
+                  "src": "342:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 24,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "342:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "309:51:0"
+            },
+            "src": "292:69:0"
+          },
+          {
             "constant": false,
-            "id": 23,
+            "id": 31,
             "name": "tasks",
             "nodeType": "VariableDeclaration",
-            "scope": 43,
-            "src": "292:35:0",
+            "scope": 51,
+            "src": "364:35:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -896,30 +1110,30 @@
               "typeString": "mapping(uint256 => struct Memo.Task)"
             },
             "typeName": {
-              "id": 22,
+              "id": 30,
               "keyType": {
-                "id": 20,
+                "id": 28,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
-                "src": "301:4:0",
+                "src": "373:4:0",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 }
               },
               "nodeType": "Mapping",
-              "src": "292:22:0",
+              "src": "364:22:0",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Task_$19_storage_$",
                 "typeString": "mapping(uint256 => struct Memo.Task)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 21,
+                "id": 29,
                 "name": "Task",
                 "nodeType": "UserDefinedTypeName",
                 "referencedDeclaration": 19,
-                "src": "309:4:0",
+                "src": "381:4:0",
                 "typeDescriptions": {
                   "typeIdentifier": "t_struct$_Task_$19_storage_ptr",
                   "typeString": "struct Memo.Task"
@@ -931,14 +1145,14 @@
           },
           {
             "body": {
-              "id": 41,
+              "id": 49,
               "nodeType": "Block",
-              "src": "380:72:0",
+              "src": "453:72:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 29,
+                    "id": 37,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -946,15 +1160,15 @@
                     "nodeType": "UnaryOperation",
                     "operator": "++",
                     "prefix": false,
-                    "src": "384:11:0",
+                    "src": "457:11:0",
                     "subExpression": {
                       "argumentTypes": null,
-                      "id": 28,
+                      "id": 36,
                       "name": "taskCount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 4,
-                      "src": "384:9:0",
+                      "src": "457:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -965,14 +1179,14 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 30,
+                  "id": 38,
                   "nodeType": "ExpressionStatement",
-                  "src": "384:11:0"
+                  "src": "457:11:0"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 39,
+                    "id": 47,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -981,26 +1195,26 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 31,
+                        "id": 39,
                         "name": "tasks",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23,
-                        "src": "399:5:0",
+                        "referencedDeclaration": 31,
+                        "src": "472:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Task_$19_storage_$",
                           "typeString": "mapping(uint256 => struct Memo.Task storage ref)"
                         }
                       },
-                      "id": 33,
+                      "id": 41,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 32,
+                        "id": 40,
                         "name": "taskCount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 4,
-                        "src": "405:9:0",
+                        "src": "478:9:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1011,7 +1225,7 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "399:16:0",
+                      "src": "472:16:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_Task_$19_storage",
                         "typeString": "struct Memo.Task storage ref"
@@ -1024,12 +1238,12 @@
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 35,
+                          "id": 43,
                           "name": "taskCount",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 4,
-                          "src": "421:9:0",
+                          "src": "494:9:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1037,12 +1251,12 @@
                         },
                         {
                           "argumentTypes": null,
-                          "id": 36,
+                          "id": 44,
                           "name": "_content",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 25,
-                          "src": "431:8:0",
+                          "referencedDeclaration": 33,
+                          "src": "504:8:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_memory_ptr",
                             "typeString": "string memory"
@@ -1051,14 +1265,14 @@
                         {
                           "argumentTypes": null,
                           "hexValue": "66616c7365",
-                          "id": 37,
+                          "id": 45,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "bool",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "440:5:0",
+                          "src": "513:5:0",
                           "subdenomination": null,
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
@@ -1082,18 +1296,18 @@
                             "typeString": "bool"
                           }
                         ],
-                        "id": 34,
+                        "id": 42,
                         "name": "Task",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 19,
-                        "src": "416:4:0",
+                        "src": "489:4:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_struct$_Task_$19_storage_ptr_$",
                           "typeString": "type(struct Memo.Task storage pointer)"
                         }
                       },
-                      "id": 38,
+                      "id": 46,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1101,42 +1315,42 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "416:30:0",
+                      "src": "489:30:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_Task_$19_memory",
                         "typeString": "struct Memo.Task memory"
                       }
                     },
-                    "src": "399:47:0",
+                    "src": "472:47:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_struct$_Task_$19_storage",
                       "typeString": "struct Memo.Task storage ref"
                     }
                   },
-                  "id": 40,
+                  "id": 48,
                   "nodeType": "ExpressionStatement",
-                  "src": "399:47:0"
+                  "src": "472:47:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 42,
+            "id": 50,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "createTask",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 26,
+              "id": 34,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25,
+                  "id": 33,
                   "name": "_content",
                   "nodeType": "VariableDeclaration",
-                  "scope": 42,
-                  "src": "350:22:0",
+                  "scope": 50,
+                  "src": "423:22:0",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1144,10 +1358,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24,
+                    "id": 32,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "350:6:0",
+                    "src": "423:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1157,32 +1371,38 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "349:24:0"
+              "src": "422:24:0"
             },
             "returnParameters": {
-              "id": 27,
+              "id": 35,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "380:0:0"
+              "src": "453:0:0"
             },
-            "scope": 43,
-            "src": "330:122:0",
+            "scope": 51,
+            "src": "403:122:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 44,
-        "src": "24:430:0"
+        "scope": 52,
+        "src": "24:503:0"
       }
     ],
-    "src": "0:454:0"
+    "src": "0:527:0"
   },
   "compiler": {
     "name": "solc",
     "version": "0.5.8+commit.23d335f2.Emscripten.clang"
   },
   "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xFa354D2Dc130Ac4FBa2d17D0B2E2Db88E4987389",
+      "transactionHash": "0xabee4fdc72dd9300dd579011160a1e706b6b0fd8745353ccd3006ec8de0382f5"
+    },
     "1560527150938": {
       "events": {},
       "links": {},
@@ -1194,10 +1414,16 @@
       "links": {},
       "address": "0x9d2945FE0e484FC003518e50d959419CACd49800",
       "transactionHash": "0x281276810beefe7242cb801148ff267224a34bd31926c220e9a632da53e15cc8"
+    },
+    "1560587977729": {
+      "events": {},
+      "links": {},
+      "address": "0x22ff07DD5B73405CBe302094144c5585e5C77649",
+      "transactionHash": "0xc1f1de3c79bc52ff756ad775606eab7c9915530a9ace8e39abdf6205a3ce22ed"
     }
   },
-  "schemaVersion": "3.0.10",
-  "updatedAt": "2019-06-15T00:45:57.962Z",
+  "schemaVersion": "3.0.11",
+  "updatedAt": "2019-06-15T10:15:51.465Z",
   "devdoc": {
     "methods": {}
   },

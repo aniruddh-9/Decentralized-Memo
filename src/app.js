@@ -1,7 +1,12 @@
 App = {
   loading: false,
   contracts: {},
-
+  createTask: async () => {
+    App.setLoading(true)
+    const content = $('#newTask').val()
+    await App.memo.createTask(content)
+    window.location.reload()
+  },
   load: async () => {
     await App.loadWeb3()
     await App.loadAccount()
@@ -122,6 +127,8 @@ App = {
     }
   }
 }
+
+
 
 $(() => {
   $(window).load(() => {
